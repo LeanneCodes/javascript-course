@@ -4,6 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Projects</title>
+    <style>
+        .js-subscribe-button {
+            background-color: #000;
+            color: #fff;
+            border-radius: 50px;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .is-subscribed {
+            background-color: lightgrey;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .calculate {
+            background-color: green;
+            border: 1px solid green;
+            color: #fff;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        input {
+            height: 36px;
+        }
+    </style>
 </head>
 <body>
     
@@ -16,7 +49,7 @@
 
     <input type="text" placeholder="Cost of order" class="js-cost-input" onkeydown="onSubmit(event)">
         
-    <button onclick="calculateTotal()">Calculate</button>
+    <button onclick="calculateTotal()" class="calculate">Calculate</button>
 
     <p class="js-total-cost"></p>
         
@@ -40,7 +73,13 @@
 
         function subscribe() {
             const buttonElement = document.querySelector('.js-subscribe-button')
-            buttonElement.innerText = 'Subscribe' ? 'Subscribed' : 'Subscribe' 
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerHTML = 'Subscribed'
+                buttonElement.classList.add('is-subscribed')
+            } else {
+                buttonElement.innerHTML = 'Subscribe'
+                buttonElement.classList.remove('is-subscribed')
+            }
             // innerText ignores extra whitespace
         }
 
