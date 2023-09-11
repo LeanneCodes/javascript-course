@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DOM</title>
+</head>
+<body>
+
+    <p>Document Object Model</p>
+
+    <button>hello</button>
+    <button class="js-btn">second btn</button>
+
+    <script>
+
+        document.querySelector('button'); // grabs the first element of this type from the page
+        document.querySelector('button')
+            .innerHTML = 'changed'; // grabs the first element of this type from the page and replaces the contents inside
+
+        const buttonElement = document.querySelector('.js-btn'); // finds the first instance of an elemnt with a class of js-btn
+        console.log(buttonElement)
+
+        console.log(document.title);
+
+        // document.body.innerHTML = '<button>Good job!</button>' // replaces what's currently on the page and creates a new button that says Good job! inside
+
+        // document.body.innerHTML = 'hello';
+        // document.title = 'Good job!'
+    </script>
+</body>
+</html>

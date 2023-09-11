@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+    <p>Rock Paper Scissors</p>
+
+    <button onclick="
+        playGame('rock');
+    ">Rock</button>
+
+    <button onclick="
+        playGame('paper');
+    ">Paper</button>
+
+    <button onclick="
+        playGame('scissors');
+    ">Scissors</button>
+
+    <script>
+        // write out the steps you need to take before writing your code
+        /*
+            1. when you click a button, the computer randomly selects a move
+            2. compare the moves to get the results
+            3. display the result in an alert popup
+        */
+
+        // a good function name starts with a verb/action
+        function playGame(playerMove) {
+
+            const computerMove = pickComputerMove();
+            let result = '';
+
+            if (playerMove === 'rock') {
+                if (computerMove === 'rock') {
+                    result = 'It\'s a tie!'
+                } else if (computerMove === 'paper') {
+                    result = 'You lose.'
+                } else {
+                    result = 'You win!'
+                }
+
+            } else if (playerMove === 'paper') {
+                if (computerMove === 'rock') {
+                    result = 'You win!'
+                } else if (computerMove === 'paper') {
+                    result = 'It\'s a tie!'
+                } else {
+                    result = 'You lose.'
+                }
+                
+            } else {
+                if (computerMove === 'rock') {
+                    result = 'You lose.'
+                } else if (computerMove === 'paper') {
+                    result = 'You win!'
+                } else {
+                    result = 'It\'s a tie!'
+                }
+            }
+            
+
+            alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+        }
+
+        function pickComputerMove() {
+
+            const randomNumber = Math.floor(Math.random() * 3);
+            let computerMove = '';
+
+            if (randomNumber == 0) {
+                computerMove = 'rock'
+            } else if (randomNumber == 1) {
+                computerMove = 'paper'
+            } else {
+                computerMove = 'scissors'
+            }
+
+            // return statements return a value from a function
+            // if there is nothing after return, it will return underfined and ends the function
+            return computerMove;
+        }
+
+    </script>
+</body>
+</html>

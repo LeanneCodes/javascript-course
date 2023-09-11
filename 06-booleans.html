@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans and If Statements</title>
+</head>
+<body>
+    <script>
+        true
+        false
+
+        console.log(3 > 5); // false
+
+        // double equals '==' tries to convert two values into the same type before checking if it is equal
+        // strict equals '===' only results in true if both values are already the same type
+        // it's best to use strict equal as you know it is exactly he same value and type
+
+        console.log('0.00' == 0) // true
+        console.log('3' == 0) // false
+        console.log(0 === 0) // true
+        console.log(0 === "0.00") // false
+
+        // order of operations
+        /*
+            (...)
+            * /
+            + -
+            Comparison operators < , >, ==, ===, !==
+        */
+
+        if (true) {
+            console.log('hello');
+        } else {
+            console.log('else')
+        }
+
+        const age = 17
+
+        if (age >= 18) {
+            console.log('Congrats you can drink!')
+        } else if (age == 17) {
+            console.log('almost there...')
+        } else {
+            console.log('You need to wait until you\'re 18 to drink.')
+        }
+
+        // falsy values
+        /*
+            false
+            0
+            ''
+            NaN -> not a number
+            underfined
+            null
+        */
+
+        // ternary operator
+        let result = true ? 'truthy' : 'falsy' // truthy
+        let newResult = 0 ? 'truthy' : 'falsy' // falsy
+
+        // guard operator && AND
+        // we can use the value on the left to block or guard the value on the right
+        true && console.log('hello') // 'hello'
+        false && console.log('hello') // falsy
+
+        // default operator || OR
+        // if the value on the left is true, the code will ignore the value on the right
+        const currency = 'EUR' || 'USD';
+        console.log(currency) // EUR
+
+        const newCurrency = underfined || 'USD';
+        console.log(currency) // USD
+        
+    </script>
+</body>
+</html>
