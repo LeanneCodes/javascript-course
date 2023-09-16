@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <script>
+        // functions are values!
+
+        function greeting() {
+            console.log('hello');
+        } // this function method allows for hoisting, where you can call the function before you have even written the function
+
+        greeting(); // calling the function
+
+        const num = 2;
+
+        const function1 = function() {
+            console.log('hello2');
+        } // anonymous function doesn't allow hoisting
+
+        function1(); // hello2
+
+        const object1 = {
+            num: 2,
+            fun: function greeting() {
+                console.log('hello3')
+            } // a function saved inside an object is called a method
+        }
+
+        object1.fun() // hello3
+
+        function display(param) {
+            console.log(param)
+        }
+
+        display(2); // 2 --> passing a value into a function
+
+
+        function run(param) {
+            param(); // must add parentheses
+        }
+
+        run(function(){
+            console.log('hello4')
+        }); // callback function
+
+    </script>
+</body>
+</html>
