@@ -1,0 +1,42 @@
+body{
+    font-family: 'Arial';
+}
+
+input {
+    height: 30px;
+    padding: 5px;
+}
+
+.js-name-input {
+    width: 182px;
+}
+
+.js-due-date-input {
+    width: 131px;
+}
+
+button {
+    height: 43px;
+    width: 100px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: green;
+    color: white;
+}
+
+.delete-btn {
+    background-color: darkred;
+    color: white;
+}
+
+.todo-grid {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    align-items: center;
+    row-gap: 10px;
+    margin-top: 8px;
+}
